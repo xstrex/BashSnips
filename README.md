@@ -1,2 +1,2 @@
 # BashSnips
-Small collection of Bash snippets, used for various scripts. 
+Small collection of misc bash snippets, used for various scripts. 
