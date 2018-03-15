@@ -20,24 +20,9 @@ if [ -f /etc/bashrc ]; then
         . /etc/bashrc
 fi
 
-# For the lazy admin in all of us
-alias sl="ls"
-alias cd..="cd .."
-alias ..="cd .."
-
-# User specific aliases
-alias cl="clear"
-alias ls="ls -CF"
-alias lsl="ls -1hFAl |less"
-alias df="df -Tha"
-alias du1="du -ach --max-depth=1"
-alias free="free -mt"
-alias ps="ps auxf"
-alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
-alias mkdir="mkdir -p"
-alias wget="wget -c"
-alias hist="history | grep"
-alias myip="curl http://ipecho.net/plain; echo"
+# User settings
+# Do you want the LS listing to be in color?
+COLORLS="true"
 
 # Check if our term supports color
 if test -t 1; then
@@ -61,22 +46,96 @@ if test -t 1; then
     fi
 fi
 
+# Colorful man pages
+if [ $COLOR == "true" ]; then 
+	export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode – red
+	export LESS_TERMCAP_md=$(printf '\e[01;35m') # enter double-bright mode – bold, magenta
+	export LESS_TERMCAP_me=$(printf '\e[0m') # turn off all appearance modes (mb, md, so, us)
+	export LESS_TERMCAP_se=$(printf '\e[0m') # leave standout mode
+	export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode – yellow
+	export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
+	export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode – cyan 
+fi
+
+# For the lazy admin in all of us
+alias sl="ls"
+alias cd..="cd .."
+alias ..="cd .."
+
+# User specific aliases
+alias cl="clear"
+alias df="df -Tha"
+alias du1="du -ach --max-depth=1"
+alias free="free -mt"
+alias ps="ps auxf"
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
+alias mkdir="mkdir -p"
+alias chx="chmod 755"
+alias chr="chmod 644"
+alias wget="wget -c"
+alias hist="history | grep"
+alias myip="curl http://ipecho.net/plain; echo"
+
+# Color dependent aliases
+if [ $COLOR == "true" ]; then
+	if [ $COLORLS == "true" ]; then
+		alias ls="ls -CF --color=auto"
+		alias ll="ls -1hFAl --color=auto"
+		alias lll="ls -1hFAl --color=auto |less"
+	elif [ $COLORLS != "true" ]; then
+		alias ls="ls -CF"
+		alias ll="ls -1hFAl"
+		alias lll="ls -1hFAl |less"
+	fi
+fi
+
 # A few useful functions
 
 # For when I forget
-als () {
+als () { # List all known aliases
 	echo "Known aliases:"
-	grep '^alias ' ~/.bashrc
+	grep '^alias ' ~/.bashrc |sed 's/"//g'
+	grep "()" .bashrc |awk '{print $1}' |grep -v grep
+}
+
+# Enable and disable color ls
+cls () {
+ if [ -z "$1" ]; then
+	echo "Enable and disable color ls"
+	echo "Usage: cls ( on | off )"
+ elif [ "$1" == "on" ]; then
+	COLORLS=$(true)
+ elif [ "$1" == "off" ]; then
+	COLORLS=$(false)
+ fi
 }
 
 # Make and cd to new dir
-mcd () {
+mcd () { 
+ if [ -z "$1" ]; then
+	echo "Make and change to new dir"
+	echo "Usage: mcd foo"
+	return 1
+ else
 	mkdir -p $1
 	cd $1
+ fi
+}
+
+# Create .tar.gz
+tgz () { 
+ if [ -z "$1" ]; then
+	echo "tar & gz a file or directory"
+	echo "Usage: tgz ( file | directory )"
+	return 1
+ else
+	tar -zcvf $1.tar.gz $1
+	rm -r $1
+ fi
 }
 
 # Extract file by type
-extract () {
+extract () { 
  if [ -z "$1" ]; then
     # display usage if no parameters given
     echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
@@ -110,6 +169,11 @@ extract () {
       fi
     done
 fi
+}
+
+myup () {
+	uptime | awk '{ print "Uptime:", $3, $4, $5 }' | sed 's/,//g'
+	return;
 }
 
 # Custom bash prompt
