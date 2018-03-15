@@ -1,7 +1,9 @@
-# Bash.bashrc
+# .bashrc file
 #
-# Bash.rc file for linux hosts
+# .bashrc file for linux hosts
 # Containing all common aliases
+# Created by strex@morphx.net
+# On 3/15/18
 #
 # If .bashrc is not included in .bash_profile,
 # include the following in .bash_profile:
