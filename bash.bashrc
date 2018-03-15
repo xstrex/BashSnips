@@ -2,13 +2,13 @@
 #
 # Bash.rc file for linux hosts
 # Containing all common aliases
-# 
+#
 # If .bashrc is not included in .bash_profile,
 # include the following in .bash_profile:
 # if [ -f ~/.bashrc ]; then
-# 		. ~/.bashrc
+#               . ~/.bashrc
 # fi
-# 
+#
 # Command alias candidates
 # history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10
 #
@@ -22,7 +22,7 @@ fi
 
 # User settings
 # Do you want the LS listing to be in color?
-COLORLS="true"
+COLORLS="false"
 
 # Check if our term supports color
 if test -t 1; then
@@ -30,7 +30,7 @@ if test -t 1; then
     ncolors=$(tput colors)
 
     if test -n "$ncolors" && test $ncolors -ge 8; then
-		COLOR="true"
+        COLOR="true"
         bold="$(tput bold)"
         underline="$(tput smul)"
         standout="$(tput smso)"
@@ -47,14 +47,14 @@ if test -t 1; then
 fi
 
 # Colorful man pages
-if [ $COLOR == "true" ]; then 
-	export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode – red
-	export LESS_TERMCAP_md=$(printf '\e[01;35m') # enter double-bright mode – bold, magenta
-	export LESS_TERMCAP_me=$(printf '\e[0m') # turn off all appearance modes (mb, md, so, us)
-	export LESS_TERMCAP_se=$(printf '\e[0m') # leave standout mode
-	export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode – yellow
-	export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
-	export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode – cyan 
+if [ $COLOR == "true" ]; then
+        export LESS_TERMCAP_mb=$(printf '\e[01;31m') # enter blinking mode – red
+        export LESS_TERMCAP_md=$(printf '\e[01;35m') # enter double-bright mode – bold, magenta
+        export LESS_TERMCAP_me=$(printf '\e[0m') # turn off all appearance modes (mb, md, so, us)
+        export LESS_TERMCAP_se=$(printf '\e[0m') # leave standout mode
+        export LESS_TERMCAP_so=$(printf '\e[01;33m') # enter standout mode – yellow
+        export LESS_TERMCAP_ue=$(printf '\e[0m') # leave underline mode
+        export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode – cyan
 fi
 
 # For the lazy admin in all of us
@@ -63,6 +63,9 @@ alias cd..="cd .."
 alias ..="cd .."
 
 # User specific aliases
+alias ls="ls -CF"
+alias ll="ls -1hFAl"
+alias lll="ls -1hFAl"
 alias cl="clear"
 alias df="df -Tha"
 alias du1="du -ach --max-depth=1"
@@ -75,78 +78,85 @@ alias chr="chmod 644"
 alias wget="wget -c"
 alias hist="history | grep"
 alias myip="curl http://ipecho.net/plain; echo"
+alias uptime="uptime | awk '{ print "Uptime:", $3, $4, $5 }' | sed 's/,//g'"
 
 # Color dependent aliases
-if [ $COLOR == "true" ]; then
-	if [ $COLORLS == "true" ]; then
-		alias ls="ls -CF --color=auto"
-		alias ll="ls -1hFAl --color=auto"
-		alias lll="ls -1hFAl --color=auto |less"
-	elif [ $COLORLS != "true" ]; then
-		alias ls="ls -CF"
-		alias ll="ls -1hFAl"
-		alias lll="ls -1hFAl |less"
-	fi
-fi
+
+# Enable and disable color ls
+cls () {
+        if [ -z "$1" ]; then
+                if [ $COLOR == "true" ]; then
+                        echo "Enable and disable color ls | This terminal support color"
+                else
+                        echo "Enable and disable color ls | This terminal does not support color"
+                        return 1
+                fi
+        elif [ "$1" == "on" ]; then
+                if [ $COLOR == "true" ]; then
+                        unalias ls && unalias ll && unalias lll
+                        alias ls="ls -CF --color=auto"
+                        alias ll="ls -1hFAl --color=auto"
+                        alias lll="ls -1hFAl --color=auto |less"
+                elif [ $COLOR == "false" ]; then
+                        echo "This terminal does not support color"
+                        return 1
+                fi
+        elif [ "$1" == "off" ]; then
+                unalias ls && unalias ll && unalias lll
+                alias ls="ls -CF"
+                alias ll="ls -1hFAl"
+                alias lll="ls -1hFAl"
+        fi
+}
 
 # A few useful functions
 
 # For when I forget
-als () { # List all known aliases
-	echo "Known aliases:"
-	grep '^alias ' ~/.bashrc |sed 's/"//g'
-	grep "()" .bashrc |awk '{print $1}' |grep -v grep
-}
-
-# Enable and disable color ls
-cls () {
- if [ -z "$1" ]; then
-	echo "Enable and disable color ls"
-	echo "Usage: cls ( on | off )"
- elif [ "$1" == "on" ]; then
-	COLORLS=$(true)
- elif [ "$1" == "off" ]; then
-	COLORLS=$(false)
- fi
+als () {
+        echo "Known aliases:"
+        grep ^alias .bashrc | cut -d ' ' -f 2- |sed 's/\"//;s/\=/ \= /;s/\"//;'
+        echo
+        echo "Known functions:"
+        FUNCT=$(declare -F |cut -d ' ' -f 3 |grep -v als)
+        for i in $FUNCT; do
+                echo "$i:" $($i)
+        done;
 }
 
 # Make and cd to new dir
-mcd () { 
+mcd () {
  if [ -z "$1" ]; then
-	echo "Make and change to new dir"
-	echo "Usage: mcd foo"
-	return 1
+        echo "Make and change to new dir"
+        return 1
  else
-	mkdir -p $1
-	cd $1
+        mkdir -p $1
+        cd $1
  fi
 }
 
 # Create .tar.gz
-tgz () { 
+tgz () {
  if [ -z "$1" ]; then
-	echo "tar & gz a file or directory"
-	echo "Usage: tgz ( file | directory )"
-	return 1
+        echo "tar & gz a file or directory"
+        return 1
  else
-	tar -zcvf $1.tar.gz $1
-	rm -r $1
+        tar -zcvf $1.tar.gz $1
+        rm -r $1
  fi
 }
 
 # Extract file by type
-extract () { 
+extract () {
  if [ -z "$1" ]; then
     # display usage if no parameters given
-    echo "Usage: extract <path/file_name>.<zip|rar|bz2|gz|tar|tbz2|tgz|Z|7z|xz|ex|tar.bz2|tar.gz|tar.xz>"
-    echo "       extract <path/file_name_1.ext> [path/file_name_2.ext] [path/file_name_3.ext]"
+        echo "Extract compressed file(s) ( zip | rar | bz2 | gz | tar | tbz2 | tgz | Z | 7z | xz | ex | tar.bz2 | tar.gz | tar.xz )"
     return 1
  else
     for n in $@
     do
       if [ -f "$n" ] ; then
           case "${n%,}" in
-            *.tar.bz2|*.tar.gz|*.tar.xz|*.tbz2|*.tgz|*.txz|*.tar) 
+            *.tar.bz2|*.tar.gz|*.tar.xz|*.tbz2|*.tgz|*.txz|*.tar)
                          tar xvf "$n"       ;;
             *.lzma)      unlzma ./"$n"      ;;
             *.bz2)       bunzip2 ./"$n"     ;;
@@ -171,14 +181,9 @@ extract () {
 fi
 }
 
-myup () {
-	uptime | awk '{ print "Uptime:", $3, $4, $5 }' | sed 's/,//g'
-	return;
-}
-
 # Custom bash prompt
 if [ $COLOR == "true" ]; then
-	export PS1="${bold}${white}[${red}\u${white}@${red}\h${white}]: ${normal}"
-	else
-	export PS1="[\u@\h]: "
+        export PS1="${bold}${white}[${red}\u${white}@${red}\h${white}]: ${normal}"
+        else
+        export PS1="[\u@\h]: "
 fi
