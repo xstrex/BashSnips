@@ -7,6 +7,7 @@
 # 2. check for "virtual" in /proc/scsi/scsi
 # 3. check for "dmi" in dmesg
 #
+# Work in progress - not working yet.
 virt () {
         if [ -e /var/log/dmesg ]; then
                 echo "/var/log/dmesg exists"
