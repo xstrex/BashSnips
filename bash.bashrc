@@ -1,9 +1,7 @@
-# .bashrc file
+# Bash.bashrc
 #
-# .bashrc file for linux hosts
+# Bash.rc file for linux hosts
 # Containing all common aliases
-# Created by strex@morphx.net
-# On 3/15/18
 #
 # If .bashrc is not included in .bash_profile,
 # include the following in .bash_profile:
@@ -59,12 +57,18 @@ if [ $COLOR == "true" ]; then
         export LESS_TERMCAP_us=$(printf '\e[04;36m') # enter underline mode – cyan
 fi
 
+# Custom ls colors (defaults are too dark)
+if [ $COLOR == "true" ]; then
+		LS_COLORS='di=1;34:ex=1;31'
+fi
+
 # For the lazy admin in all of us
 alias sl="ls"
 alias cd..="cd .."
 alias ..="cd .."
 
 # User specific aliases
+alias c="clear"
 alias ls="ls -CF"
 alias ll="ls -1hFAl"
 alias lll="ls -1hFAl"
@@ -98,7 +102,7 @@ cls () {
                         unalias ls && unalias ll && unalias lll
                         alias ls="ls -CF --color=auto"
                         alias ll="ls -1hFAl --color=auto"
-                        alias lll="ls -1hFAl --color=auto |less"
+                        alias lll="ls -1hFAl --color=auto |less -r"
                 elif [ $COLOR == "false" ]; then
                         echo "This terminal does not support color"
                         return 1
