@@ -32,8 +32,6 @@ elif [ "$(expr substr "$(uname -s)" 1 10)" == "MINGW64_NT" ]; then
 fi
 
 # User settings
-# Do you want the LS listing to be in color?
-COLORLS="false"
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -200,7 +198,7 @@ ext () {
         echo "Extract compressed file(s) ( zip | rar | bz2 | gz | tar | tbz2 | tgz | Z | 7z | xz | ex | tar.bz2 | tar.gz | tar.xz )"
     return 1
  else
-    for n in $@
+    for n in "$@"
     do
       if [ -f "$n" ] ; then
           case "${n%,}" in
