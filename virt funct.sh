@@ -31,6 +31,7 @@ virt () {
                         echo "Not Virtual"
                 fi
         fi
+      fi
 }
 
 virt
