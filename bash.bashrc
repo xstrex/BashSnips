@@ -158,11 +158,16 @@ als () {
         echo "Known aliases:"
         grep ^alias .bashrc | cut -d ' ' -f 2- |sed 's/\"//;s/\=/ \= /;s/\"//;'
         echo
-        echo "Known functions:"
-        FUNCT=$(declare -F |cut -d ' ' -f 3 |grep -v als)
-        for i in $FUNCT; do
-                echo "$i:" $($i)
-        done;
+        if [ "$OS" == "Linux" ]; then
+              echo "Known functions:"
+              FUNCT=$(declare -F |cut -d ' ' -f 3 |grep -v als)
+              for i in $FUNCT; do
+                    echo "$i:" $($i)
+              done;
+        else
+              echo "Known functions:"
+              echo "to be completed"
+        fi
 }
 
 # Make and cd to new dir
