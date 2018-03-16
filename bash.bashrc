@@ -1,4 +1,4 @@
-# Bash.bashrc
+#!/usr/bin/env bash
 #
 # Bash.rc file for linux hosts
 # Containing all common aliases
