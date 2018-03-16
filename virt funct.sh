@@ -35,3 +35,29 @@ virt () {
 }
 
 virt
+
+virtx () {
+  if [ -e /var/log/dmesg ]; then
+    echo "Checking dmesg..."
+    DMESG1=`grep -i virtual /var/log/dmesg`
+    if [ -n "$DMESG1" ]; then
+      echo "Passed first dmesg test"
+      if [ -e /proc/scsi/scsi ]; then
+        echo "Checking scsi devices..."
+        SCSI=`grep -i virtual /proc/scsi/scsi`
+        if [ -n "$SCSI" ]; then
+          echo "Passed scsi device check"
+            if hash dmesg 2>/dev/null; then
+              echo "Checking dmi..."
+              DMESG2='dmesg | grep -i dmi |grep -i virtual'
+                if [ -n "$DMESG2" ]; then
+                  echo "Virtual"
+                elif [ -z "$DMESG2" ]; then
+                  echo "Not Virtual"
+                fi
+            fi
+        fi
+      fi
+    fi
+  fi
+}
