@@ -152,7 +152,7 @@ cls () {
         fi
 }
 
-# A few useful functions
+# A few useful functions 
 
 # For when I forget
 als () {
@@ -161,7 +161,7 @@ als () {
         echo
         if [ "$OS" == "Linux" ]; then
               echo "Known functions:"
-              FUNCT=$(declare -F |cut -d ' ' -f 3 |grep -v als)
+              FUNCT=$(declare -F | cut -d ' ' -f 3 |grep -v ^_ |grep '^...$')
               for i in $FUNCT; do
                     echo "$i:" $($i)
               done;
@@ -194,7 +194,7 @@ tgz () {
 }
 
 # Extract file by type
-extract () {
+ext () {
  if [ -z "$1" ]; then
     # display usage if no parameters given
         echo "Extract compressed file(s) ( zip | rar | bz2 | gz | tar | tbz2 | tgz | Z | 7z | xz | ex | tar.bz2 | tar.gz | tar.xz )"
