@@ -189,7 +189,7 @@ fi
 
 # Custom bash prompt
 if [ $COLOR == "true" ]; then
-        export PS1="${bold}${white}[${red}\u${white}@${red}\h${white}]: ${normal}"
+        export PS1="\[${bold}\]\[${white}\][\[${red}\]\u\[${white}\]@\[${red}\]\h\[${white}\]]: \[${normal}\]"
         else
         export PS1="[\u@\h]: "
 fi
