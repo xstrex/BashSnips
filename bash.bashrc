@@ -23,11 +23,11 @@ fi
 # Check our env
 if [ "$(uname)" == "Darwin" ]; then
         OS="Darwin"
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+elif [ "$(expr substr "$(uname -s)" 1 5)" == "Linux" ]; then
         OS="Linux"
-elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+elif [ "$(expr substr "$(uname -s)" 1 10)" == "MINGW32_NT" ]; then
         OS="Cygwin"
-elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
+elif [ "$(expr substr "$(uname -s)" 1 10)" == "MINGW64_NT" ]; then
         OS="Cygwin"
 fi
 
