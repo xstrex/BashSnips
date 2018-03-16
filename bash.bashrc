@@ -114,6 +114,7 @@ alias wget="wget -c"
 alias hist="history | grep"
 alias myip="curl http://ipecho.net/plain; echo"
 alias uptime="uptime | awk '{ print "Uptime:", $3, $4, $5 }' | sed 's/,//g'"
+alias lstg="tar -tf"
 
 # Color dependent aliases
 
