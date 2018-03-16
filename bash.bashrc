@@ -152,7 +152,7 @@ cls () {
         fi
 }
 
-# A few useful functions 
+# A few useful functions
 
 # For when I forget
 als () {
@@ -161,9 +161,9 @@ als () {
         echo
         if [ "$OS" == "Linux" ]; then
               echo "Known functions:"
-              FUNCT=$(declare -F | cut -d ' ' -f 3 |grep -v ^_ |grep '^...$')
+              FUNCT="$(declare -F | cut -d ' ' -f 3 |grep -v ^_ |grep '^...$')"
               for i in $FUNCT; do
-                    echo "$i:" $($i)
+                    echo "$i:" "$($i)"
               done;
         else
               echo "Known functions:"
