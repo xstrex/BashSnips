@@ -100,7 +100,7 @@ alias ..="cd .."
 alias c="clear"
 alias ls="ls -CF"
 alias ll="ls -1hFAl"
-alias lll="ls -1hFAl"
+alias lll="ls -1hFAl |less -r"
 alias cl="clear"
 alias df="df -Tha"
 alias du1="du -ach --max-depth=1"
@@ -128,10 +128,17 @@ cls () {
                 fi
         elif [ "$1" == "on" ]; then
                 if [ $COLOR == "true" ]; then
+                        if [ $OS == "Darwin" ]; then
+                          unalias ls && unalias ll && unalias lll
+                          alias ls="ls -CFG"
+                          alias ll="ls -1hFAlG"
+                          alias lll="ls -1hFAlG |less -r"
+                        else
                         unalias ls && unalias ll && unalias lll
                         alias ls="ls -CF --color=auto"
                         alias ll="ls -1hFAl --color=auto"
                         alias lll="ls -1hFAl --color=auto |less -r"
+                        fi
                 elif [ $COLOR == "false" ]; then
                         echo "This terminal does not support color"
                         return 1
