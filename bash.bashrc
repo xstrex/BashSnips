@@ -20,6 +20,17 @@ if [ -f /etc/bashrc ]; then
         . /etc/bashrc
 fi
 
+# Check our env
+if [ "$(uname)" == "Darwin" ]; then
+        OS="Darwin"
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+        OS="Linux"
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
+        OS="Cygwin"
+elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
+        OS="Cygwin"
+fi
+
 # User settings
 # Do you want the LS listing to be in color?
 COLORLS="false"
