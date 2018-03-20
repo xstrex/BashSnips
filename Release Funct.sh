@@ -1,16 +1,22 @@
 #!/bin/bash
-
+#
 # Grab RHEL or OEL release info from servers
-release () {
-	if [ -e "/etc/redhat-release" ]; then
-	REL=`grep -Eo '[0-9].[0-9]' /etc/redhat-release`
-	echo "RHEL $REL"
-	elif [ -e "/etc/oracle-release" ]; then
-	OEL=`grep -Eo '[0-9].[0-9]' /etc/oracle-release`
-	echo "OEL $OEL"
+ver () {
+	if [ -e "/etc/oracle-release" ]; then
+		OS=`cat /etc/oracle-release | cut -d ' ' -f1,2,3`
+		VERV=`cat /etc/oracle-release | cut -d ' ' -f5`
+	elif [ -e "/etc/redhat-release" ]; then
+		OS=`cat /etc/redhat-release | cut -d ' ' -f1,2,3,4`
+		VERV=`cat /etc/redhat-release | cut -d ' ' -f7`
 	else
 	echo "Not RHEL or OEL"
 	fi
-}
 
-release
+	if [ -e "/bin/uname" ]; then
+		VERR=`uname -r |sed 's/.x86.*//g'`
+	elif [ -e "/proc/version" ]; then
+		VERR=`cat /proc/version | cut -d ' ' -f3`
+	fi
+
+	printf "%s$OS\n$VERV ($VERR)\n"
+}
