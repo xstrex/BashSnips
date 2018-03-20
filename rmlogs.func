@@ -1,7 +1,6 @@
 #!/bin/bash
 #
 # Remove logs from PATH, matching LOG-NAME for the last DAYS
-
 rmlogs () {
         if [ $# -ne "3" ]; then
                 echo "Usage: rmlogs (days) (path) (log-name)"
