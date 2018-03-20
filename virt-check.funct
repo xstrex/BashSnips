@@ -1,0 +1,29 @@
+#!/bin/bash
+#
+# Virtual Function
+# Detect if a server is virtual or not, without root access
+#
+# 1. check for "virtual" in /var/log/dmesg
+# 2. check for "virtual" in /proc/scsi/scsi
+#
+virt () {
+        if [ -e /var/log/dmesg ] && [ -r /var/log/dmesg ]; then
+                DMESG=`grep -i dmi /var/log/dmesg | grep -i virtual`
+                if [ -n "$DMESG" ]; then
+                        if [ -e /proc/scsi/scsi ] && [ -r /proc/scsi/scsi ]; then
+                        SCSI=`grep -i virtual /proc/scsi/scsi`
+                                if [ -n "$SCSI" ]; then
+                                        echo "Virtual"
+                                else
+                                        echo "Not Virtual"
+                                fi
+                        else
+                                echo "Not Virtual"
+                        fi
+                else
+                        echo "/proc/scsi/scsi is not accessible (permission denied)"
+                fi
+        else
+                echo "/var/log/dmesg is not accessible (permission denied)"
+        fi
+}
