@@ -1,0 +1,10 @@
+#!/bin/bash
+# Takes process pid as argument
+spinner () {
+        PID="$1" && i=1 && sp="/-\|"
+        printf " "
+        while [ -d /proc/$PID ]; do
+                printf "\b${sp:i++%${#sp}:1}"
+        done
+        printf "\n"
+}
