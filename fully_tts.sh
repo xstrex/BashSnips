@@ -35,7 +35,7 @@ while getopts ":h:m:" o; do
 done
 shift $((OPTIND-1))
 
-if [ -h "${h}" ] || [ -z "${m}" ]; then
+if [ -z "${h}" ] || [ -z "${m}" ]; then
     usage
 fi
 
