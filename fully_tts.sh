@@ -3,30 +3,27 @@
 # Fully TTS Script
 # @author Strex
 #
-# /usr/bin/curl -k "http://n7x1:2323/?cmd=textToSpeech&text=message&password=pass" > /dev/null
-#
 # Define some variables
-# curl=`which curl`
-# sed=`which sed`
-# cat=`which cat`
-
-# Host info
-# host=$1
-# pass=pass
+curl=`which curl`
+port="2323"
 
 # functions
 usage () {
-  printf "%sUsage: $0 [ -h | --host ] [ -m | --mesg ]\n"
+  printf "%sUsage: $0 [ -h host ] [ -p password ] [ -m "message" ]\n"
 }
 
 # Extract options and their args into variables
-while getopts ":h:m:" o; do
+while getopts ":h:p:m:" o; do
   case "${o}" in
     h)
       host=${OPTARG}
       ;;
+    p)
+      pass=${OPTARG}
+      ;;
     m)
-      mesg=${OPTARG}
+      raw=${OPTARG}
+      mesg=${raw// /+}
       ;;
     *)
       usage
@@ -35,9 +32,14 @@ while getopts ":h:m:" o; do
 done
 shift $((OPTIND-1))
 
-if [ -z "${h}" ] || [ -z "${m}" ]; then
+if [ -z "${host}" ] || [ -z "${pass}" ] || [ -z "${mesg}" ]; then
     usage
 fi
 
-echo "host: ${host}"
-echo "mesg: ${mesg}"
+# Finally set-up the URL
+url="http://${host}:${port}/?cmd=textToSpeech&text=${mesg}&password=${pass}"
+
+# Play our message
+eval ${curl} -s -X POST '${url}' >/dev/null 2>&1
+
+exit 0
