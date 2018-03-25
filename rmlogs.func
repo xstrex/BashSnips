@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# Remove logs from PATH, matching LOG-NAME for the last DAYS
+rmlogs () {
+        if [ $# -ne "3" ]; then
+                echo "Usage: rmlogs (days) (path) (log-name)"
+                exit 0
+        fi
+        if [ $# -eq "3" ]; then
+                echo "Removing logs, please standby"
+                /bin/find $2 -type f -name "$3" -mtime +"$1" -exec rm -f {} \; 2>/dev/null
+        fi
+}
