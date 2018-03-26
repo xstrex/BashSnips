@@ -9,11 +9,12 @@
 vim=$(which vim)
 sudo=$(which sudo)
 curl=$(which curl)
+git=$(which git)
 
 if [ -n "$vim" ]; then
-	printf "Great, Vim's installed, proceeding..\\n"
+	printf "Great, Vim's installed, proceeding\\n"
 elif [[ -z $vim ]]; then
-	printf "Looks like Vim's not installed..\\n"
+	printf "Looks like Vim's not installed\\n"
 	printf "Trying to install Vim\\n"
 	vim-install
 fi
@@ -56,8 +57,27 @@ vim-install () {
 }
 
 # Make vim directories
-printf "Setting up directories.."
-eval mkdir -p ~/.vim/autoload ~/.vim/bundle 
+printf "Setting up directories\\n"
+eval mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/syntax
 
+# Installing custom vimrc file
+printf "Setting up custom vimrc file\\n"
+eval "$curl" -LSso ~/.vim/vimrc https://raw.githubusercontent.com/xstrex/BashSnips/master/vim.rc
 
-	#statements
+# Setting up pathogen
+printf "Setting up pathogen.vim\\n"
+eval "$curl" -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+# Installing Solarized Theme
+printf "Installing Solarized theme\\n"
+eval "$git" clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle
+
+# Installing monit syntax highlighting
+printf "Installing Monit syntax highlighting\\n"
+eval "$curl" -LSso ~/.vim/syntax/monitrc.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/monitrc.vim
+
+# Done
+printf "Vim is installed and configured\\n"
+printf "Rad!\\n"
+
+exit 0
