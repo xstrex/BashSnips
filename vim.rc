@@ -4,6 +4,9 @@
 " use Vim mode instead of pure Vi, it must be the first instruction
 set nocompatible
 
+" execute pathogen on ~/.vim/bundle/*
+execute pathogen#infect('bundle/{}')
+
 " display settings
 set encoding=utf-8 " encoding used for displaying file
 set ruler " show the cursor position all the time
