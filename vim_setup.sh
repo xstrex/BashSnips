@@ -70,7 +70,7 @@ eval "$curl" -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # Installing Solarized Theme
 printf "Installing Solarized theme\\n"
-eval "$git" --quiet clone git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
+eval "$git" clone --quiet git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
 
 # Installing monit syntax highlighting
 printf "Installing Monit syntax highlighting\\n"
