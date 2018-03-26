@@ -101,3 +101,6 @@ inoremap <F8> <Esc>:nohl<CR>a
 " press F12 to toggle showing the non-printable charactes
 noremap <F12> :set list!<CR>
 inoremap <F12> <Esc>:set list!<CR>a
+
+" Execute pathogen
+execute pathogen#infect()
