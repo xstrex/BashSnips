@@ -71,6 +71,10 @@ eval "$curl" -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 printf "Installing distinguished theme\\n"
 eval "$curl" -LSso ~/.vim/colors/distinguished.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Colors/distinguished.vim
 
+# Installing Vividchalk Theme
+printf "Installing Vividchalk theme\\n"
+eval "$curl" -LSso ~/.vim/colors/vividchalk.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Colors/vividchalk.vim
+
 # Installing monit syntax highlighting
 printf "Installing Monit syntax highlighting\\n"
 eval "$curl" -LSso ~/.vim/syntax/monitrc.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Syntax/monitrc.vim
