@@ -9,7 +9,6 @@
 vim=$(which vim)
 sudo=$(which sudo)
 curl=$(which curl)
-git=$(which git)
 
 if [ -n "$vim" ]; then
 	printf "Great, Vim's installed, proceeding\\n"
@@ -70,11 +69,11 @@ eval "$curl" -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # Installing Solarized Theme
 printf "Installing distinguished theme\\n"
-eval "$git" clone --quiet git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
+eval "$curl" -LSso ~/.vim/colors/distinguished.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Colors/distinguished.vim
 
 # Installing monit syntax highlighting
 printf "Installing Monit syntax highlighting\\n"
-eval "$curl" -LSso ~/.vim/syntax/monitrc.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/monitrc.vim
+eval "$curl" -LSso ~/.vim/syntax/monitrc.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Syntax/monitrc.vim
 
 # Done
 printf "Vim is installed and configured\\n"
