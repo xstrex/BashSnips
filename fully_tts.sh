@@ -8,7 +8,7 @@ port="2323"
 
 # functions
 usage () {
-  printf "%sUsage: $0 [ -h host ] [ -p password ] [ -m "message" ]\n"
+  echo "Usage: $0 [ -h host ] [ -p password ] [ -m "message" ]"
 }
 
 # Extract options and their args into variables
