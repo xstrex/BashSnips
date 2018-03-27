@@ -8,10 +8,10 @@
 #
 virt () {
         if [ -e /var/log/dmesg ] && [ -r /var/log/dmesg ]; then
-                DMESG=`grep -i dmi /var/log/dmesg | grep -i virtual`
+                DMESG="$(grep -i dmi /var/log/dmesg | grep -i virtual)"
                 if [ -n "$DMESG" ]; then
                         if [ -e /proc/scsi/scsi ] && [ -r /proc/scsi/scsi ]; then
-                        SCSI=`grep -i virtual /proc/scsi/scsi`
+                        SCSI="$(grep -i virtual /proc/scsi/scsi)"
                                 if [ -n "$SCSI" ]; then
                                         echo "Virtual"
                                 else

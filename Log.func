@@ -11,5 +11,5 @@ LOG="$SDATE-$SBASE.log"
 
 # Logging Function
 log () {
-        echo "$DATE $1" >> $LOG
+        echo "$DATE $1" >> "$LOG"
 }

@@ -8,6 +8,6 @@ rmlogs () {
         fi
         if [ $# -eq "3" ]; then
                 echo "Removing logs, please standby"
-                /bin/find $2 -type f -name "$3" -mtime +"$1" -exec rm -f {} \; 2>/dev/null
+                /bin/find "$2" -type f -name "$3" -mtime +"$1" -exec rm -f {} \; 2>/dev/null
         fi
 }
