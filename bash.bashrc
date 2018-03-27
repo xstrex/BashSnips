@@ -103,6 +103,7 @@ alias ..="cd .."
 # User specific aliases
 alias c="clear"
 alias ls="ls -CF"
+alias la="ls -CFA"
 alias ll="ls -1hFAl"
 alias lll="ls -1hFAl |less -r"
 alias cl="clear"
