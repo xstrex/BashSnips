@@ -1,0 +1,570 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"syn",
+				"syntax"
+			],
+			[
+				"high",
+				"highlighting\t(vim.rc)"
+			],
+			[
+				"Install",
+				"Installing"
+			],
+			[
+				"print",
+				"printf"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"en",
+				"entity_id"
+			],
+			[
+				"con",
+				"condition"
+			],
+			[
+				"mon",
+				"moneytree_battery_low"
+			],
+			[
+				"n7x1",
+				"n7x1_battery"
+			],
+			[
+				"aria",
+				"aria_battery_low"
+			],
+			[
+				"ipa",
+				"ipad_battery_low"
+			],
+			[
+				"ipho",
+				"iphone_battery_low"
+			],
+			[
+				"n7",
+				"n7x2_battery_low"
+			],
+			[
+				"n7x1_m",
+				"n7x1_maint_off"
+			],
+			[
+				"n7x1_s",
+				"n7x1_screen_off"
+			],
+			[
+				"co",
+				"command_off"
+			],
+			[
+				"com",
+				"command_on"
+			],
+			[
+				"harm",
+				"harmony-lr_host"
+			],
+			[
+				"lifx-lrg",
+				"lifx-lrg_host"
+			],
+			[
+				"lifx-l",
+				"lifx-lrhg_host"
+			],
+			[
+				"lif",
+				"lifx-br_host"
+			],
+			[
+				"ne",
+				"newt_host"
+			],
+			[
+				"oc",
+				"octopi_host"
+			],
+			[
+				"pr",
+				"printer_host"
+			],
+			[
+				"hu",
+				"hub_host"
+			],
+			[
+				"bedr",
+				"bedroom-dht22_host"
+			],
+			[
+				"liv",
+				"livingroom-dht22_host"
+			],
+			[
+				"of",
+				"office-dht22_host"
+			],
+			[
+				"N7",
+				"N7x1"
+			],
+			[
+				"screen",
+				"screenOn"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 400.0,
+		"last_filter": "git pu",
+		"selected_items":
+		[
+			[
+				"git pu",
+				"Git: Pull"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"git ",
+				"Git: Add All"
+			],
+			[
+				"proj",
+				"Project: Add Folder"
+			],
+			[
+				"user",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"sett u",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"sel",
+				"UI: Select Color Scheme"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"settings u",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"box",
+				"Boxy Theme: Preferences"
+			],
+			[
+				"the",
+				"UI: Select Theme"
+			],
+			[
+				"col",
+				"UI: Select Color Scheme"
+			],
+			[
+				"settin us",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"ui",
+				"UI: Select Theme"
+			],
+			[
+				"da ui",
+				"DA UI: Theme Settings"
+			],
+			[
+				"da",
+				"DA UI: Select Accent"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"sele",
+				"DA UI: Select Accent"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"package control sett",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"select",
+				"UI: Select Color Scheme"
+			],
+			[
+				"git pus",
+				"Git: Push"
+			],
+			[
+				"git",
+				"Git: Add All"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"git c",
+				"Git: Commit"
+			],
+			[
+				"boxy",
+				"Boxy Theme: Preferences"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git a",
+				"Git: Add All"
+			],
+			[
+				"upgr",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"set mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"subl",
+				"Colorsublime: Browse Themes Online"
+			],
+			[
+				"rel",
+				"SublimeLinter: Reload SublimeLinter and its Plugins"
+			],
+			[
+				"git add",
+				"Git: Add All"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"git ad",
+				"Git: Add All"
+			],
+			[
+				"install",
+				"Colorsublime: Install Theme"
+			],
+			[
+				"git comm",
+				"Git: Commit"
+			],
+			[
+				"add",
+				"Git: Add All"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				" git c",
+				"Git: Commit"
+			],
+			[
+				"git commit ",
+				"Git: Commit"
+			],
+			[
+				"git s",
+				"Git: Status"
+			],
+			[
+				"git st",
+				"Git: Status"
+			],
+			[
+				"relo",
+				"SublimeLinter: Reload SublimeLinter and its Plugins"
+			],
+			[
+				"subli",
+				"SublimeLinter: Reload SublimeLinter and its Plugins"
+			],
+			[
+				"sublimelin",
+				"SublimeLinter: Show All Errors"
+			],
+			[
+				"sublim",
+				"SublimeLinter: Reload SublimeLinter and its Plugins"
+			],
+			[
+				"restart",
+				"SublimeLinter: Reload SublimeLinter and its Plugins"
+			]
+		],
+		"width": 436.0
+	},
+	"console":
+	{
+		"height": 131.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/strex/Github/BashSnips"
+	],
+	"file_history":
+	[
+		"/Users/strex/Github/test/foo.sh",
+		"/Users/strex/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/Users/strex/Library/Application Support/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+		"/Users/strex/Github/BashSnips/README.md",
+		"/Users/strex/Github/BashSnips/fully_tts.sh",
+		"/Users/strex/Github/BashSnips/vim_setup.sh",
+		"/Users/strex/Github/BashSnips/.bashrc",
+		"/Users/strex/Github/BashSnips/rmlogs.func",
+		"/Users/strex/Github/BashSnips/Log.func",
+		"/Users/strex/Github/BashSnips/virt-check.func",
+		"/Users/strex/Github/BashSnips/LICENSE",
+		"/Users/strex/Github/BashSnips/Vim-Syntax/monitrc.ft",
+		"/Users/strex/Github/BashSnips/bash.bashrc",
+		"/Users/strex/Github/BashSnips/vim.rc",
+		"/Users/strex/Github/BashSnips/Vim-Colors/vividchalk.vim",
+		"/Users/strex/Github/BashSnips/monitrc.vim",
+		"/Users/strex/Github/BashSnips/distinguished.vim",
+		"/Users/strex/Library/Mobile Documents/com~apple~CloudDocs/sonoff-6683 - Washing Machine"
+	],
+	"find":
+	{
+		"height": 44.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"de ",
+			"<code bash>",
+			"^.*#.*\\n",
+			"^#",
+			"====== ",
+			"Process",
+			"Offline",
+			"led",
+			"'",
+			"n7x1",
+			" on",
+			"  on",
+			"on",
+			"http://n7x1:2323/?type=json&password=thx1138",
+			"N7x1",
+			",",
+			"friendly_name:",
+			"sensor.money_tree_moisture:\n    friendly_name:\n    icon:\nsensor.money_tree_conductivity:\n    friendly_name:\n    icon:\nsensor.money_tree_light_intensity:\n    friendly_name:\n    icon:\nsensor.money_tree_temperature:\n    friendly_name:\n    icon:\nsensor.money_tree_battery:\n    friendly_name:\n    icon:",
+			"$",
+			"device_tracker.jon_iphone"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"de, ",
+			"<code:bash linenums:1>",
+			"",
+			"\\r\\n",
+			"\\r",
+			"\\d",
+			"/n",
+			"",
+			"===== ",
+			"\"",
+			"n7x2",
+			"",
+			"!secret n7x1-fully-rest",
+			"N7x2",
+			"\\n",
+			"\\r",
+			"",
+			"/r",
+			"/n",
+			"device_tracker.beacon_rav4"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 100.0
+	},
+	"output.exec":
+	{
+		"height": 103.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 63.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Bash Build System/Bash.sublime-build",
+	"project": "BashSnips.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
