@@ -57,7 +57,7 @@ vim-install () {
 
 # Make vim directories
 printf "Setting up directories\\n"
-eval mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/syntax ~/.vim/colors
+eval mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/syntax ~/.vim/colors ~/.vim/ftdetect
 
 # Installing custom vimrc file
 printf "Setting up custom vimrc file\\n"
@@ -78,6 +78,7 @@ eval "$curl" -LSso ~/.vim/colors/vividchalk.vim https://raw.githubusercontent.co
 # Installing monit syntax highlighting
 printf "Installing Monit syntax highlighting\\n"
 eval "$curl" -LSso ~/.vim/syntax/monitrc.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Syntax/monitrc.vim
+eval "$curl" -LSso ~/.vim/ftdetect/monitrc.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Syntax/monitrc.ft
 
 # Done
 printf "Vim is installed and configured\\n"
