@@ -56,19 +56,19 @@ if test -t 1; then
 
     ncolors=$(tput colors)
 
-    if test -n "$ncolors" && test $ncolors -ge 8; then
+    if test -n "$ncolors" && test "$ncolors" -ge 8; then
         COLOR="true"
         bold="$(tput bold)"
-        underline="$(tput smul)"
-        standout="$(tput smso)"
+        # underline="$(tput smul)"
+        # standout="$(tput smso)"
         normal="$(tput sgr0)"
-        black="$(tput setaf 0)"
+        # black="$(tput setaf 0)"
         red="$(tput setaf 1)"
-        green="$(tput setaf 2)"
-        yellow="$(tput setaf 3)"
-        blue="$(tput setaf 4)"
-        magenta="$(tput setaf 5)"
-        cyan="$(tput setaf 6)"
+        # green="$(tput setaf 2)"
+        # yellow="$(tput setaf 3)"
+        # blue="$(tput setaf 4)"
+        # magenta="$(tput setaf 5)"
+        # cyan="$(tput setaf 6)"
         white="$(tput setaf 7)"
     fi
 fi
@@ -87,6 +87,7 @@ fi
 # Custom ls colors (defaults are too dark)
 if [ $COLOR == "true" ]; then
 		LS_COLORS='di=1;34:ex=1;31'
+        export LS_COLORS
 fi
 
 if [ -n "$(which vim)" ]; then
@@ -182,8 +183,8 @@ mcd () {
         echo "Make and change to new dir"
         return 1
  else
-        mkdir -p $1
-        cd $1
+        mkdir -p "$1"
+        cd "$1" || return
  fi
 }
 
@@ -193,8 +194,8 @@ tgz () {
         echo "tar & gz a file or directory"
         return 1
  else
-        tar -zcvf $1.tar.gz $1
-        rm -r $1
+        tar -zcvf "$1".tar.gz "$1"
+        rm -r "$1"
  fi
 }
 
