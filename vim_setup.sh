@@ -58,7 +58,7 @@ vim-install () {
 
 # Make vim directories
 printf "Setting up directories\\n"
-eval mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/syntax
+eval mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/syntax ~/.vim/colors
 
 # Installing custom vimrc file
 printf "Setting up custom vimrc file\\n"
@@ -69,7 +69,7 @@ printf "Setting up pathogen.vim\\n"
 eval "$curl" -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # Installing Solarized Theme
-printf "Installing Solarized theme\\n"
+printf "Installing distinguished theme\\n"
 eval "$git" clone --quiet git://github.com/altercation/vim-colors-solarized.git ~/.vim/bundle/vim-colors-solarized
 
 # Installing monit syntax highlighting
