@@ -89,6 +89,12 @@ if [ $COLOR == "true" ]; then
 		LS_COLORS='di=1;34:ex=1;31'
 fi
 
+if [ -n "$(which vim)" ]; then
+    alias vi="vim"
+else
+    alias vi="vi"
+fi
+
 # For the lazy admin in all of us
 alias sl="ls"
 alias cd..="cd .."
