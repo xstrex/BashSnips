@@ -9,7 +9,7 @@ Then create some needed vim directoris, download and install the pathogen plugin
 color schemes. Finally it will install a .vimrc config file. 
 
 ### Installation
-Simply run: curl -s https://raw.githubusercontent.com/xstrex/BashSnips/master/vim_setup.sh | bash
+Simply run: `curl -s https://raw.githubusercontent.com/xstrex/BashSnips/master/vim_setup.sh | bash`
 
 ### Error checking
 Currently there's very little error checking, if you find something, or would like to make an improvement
