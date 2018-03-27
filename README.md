@@ -23,7 +23,7 @@ please issue a pull request, or open an issue.
 Adds a ton of aliases, and a few useful functions. 
 
 ### Installation
-Simply run this: `curl -LSso .bashrc https://raw.githubusercontent.com/xstrex/BashSnips/master/bash.bashrc || source .bashrc`
+Simply run this: `curl -LSso .bashrc https://raw.githubusercontent.com/xstrex/BashSnips/master/.bashrc || source .bashrc`
 
 ### Current Functions
 - cls : turn color "ls" on or off depending on OS
