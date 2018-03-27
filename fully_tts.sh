@@ -4,7 +4,6 @@
 # @author Strex
 #
 # Define some variables
-curl=`which curl`
 port="2323"
 
 # functions
@@ -40,6 +39,6 @@ fi
 url="http://${host}:${port}/?cmd=textToSpeech&text=${mesg}&password=${pass}"
 
 # Play our message
-eval ${curl} -s -X POST '${url}' >/dev/null 2>&1
+curl -s -X POST "${url}" >/dev/null 2>&1
 
 exit 0
