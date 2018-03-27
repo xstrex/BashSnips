@@ -27,7 +27,7 @@ Simply run this: `curl -LSso .bashrc https://raw.githubusercontent.com/xstrex/Ba
 
 ### Current Functions
 - cls : turn color "ls" on or off depending on OS
-- als : list knowns aliases
+- als : list known aliases
 - mcd : make and cd into directory
 - tgz : create a tar.gz file from a file or dir
 - ext : extract a ton of different formats
