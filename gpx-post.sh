@@ -21,6 +21,12 @@ TIME=$(xpath "$1" '/gpx/metadata/time/text()' 2>/dev/null | cut -d. -f 1 |awk -F
 NAME=$(xpath "$1" '/gpx/trk/name/text()' 2>/dev/null)
 CORD=$(xpath "$1" '/gpx/trk/trkseg/trkpt[1]' 2>/dev/null |grep -e "<trkpt " | gsed -re 's/<trkpt |>//g')
 
-echo "$NAME"
+# echo "$NAME"
+# echo "$TIME"
+# echo "$CORD"
+
+echo "=== $NAME ==="
 echo "$TIME"
-echo "$CORD"
+echo "<olmap id=\"olMap\" width=\"700px\" height=\"400px\" "$CORD" zoom=\"18\" statusbar=\"1\" toolbar=\"0\" controls=\"0\" poihoverstyle=\"1\" baselyr=\"terrain\" gpxfile=\"outdoor_adventures:$1\" summary=\"$NAME\">"
+echo "</olmap>"
+echo "{{ :outdoor_adventures:$1 |}}"
