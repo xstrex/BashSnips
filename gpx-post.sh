@@ -30,3 +30,8 @@ echo "$TIME"
 echo "<olmap id=\"olMap\" width=\"700px\" height=\"400px\" "$CORD" zoom=\"18\" statusbar=\"1\" toolbar=\"0\" controls=\"0\" poihoverstyle=\"1\" baselyr=\"terrain\" gpxfile=\"outdoor_adventures:$1\" summary=\"$NAME\">"
 echo "</olmap>"
 echo "{{ :outdoor_adventures:$1 |}}"
+
+# TODO
+# 1. Why are date stamps the same across different files?
+# 2. Build function to push file to wiki via repo
+# 3. Build function to push post to wiki via repo
