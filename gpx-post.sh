@@ -17,6 +17,10 @@ if [[ $# == '0' ]]; then
 	return 0
 fi
 
-TIME=$(xpath "$1" '/gpx/metadata/time/text()' 2>/dev/null)
+TIME=$(xpath "$1" '/gpx/metadata/time/text()' 2>/dev/null | cut -d. -f 1 |awk -F "T" '{print $2 " " $1}')
+NAME=$(xpath "$1" '/gpx/trk/name/text()' 2>/dev/null)
+CORD=$(xpath "$1" '/gpx/trk/trkseg/trkpt[1]' 2>/dev/null |grep -e "<trkpt " | gsed -re 's/<trkpt |>//g')
 
-echo $TIME
+echo "$NAME"
+echo "$TIME"
+echo "$CORD"
