@@ -14,7 +14,7 @@ usage () {
 
 if [[ $# == '0' ]]; then
 	usage
-	return 0
+	exit 0
 fi
 
 TIME=$(xpath "$1" '/gpx/metadata/time/text()' 2>/dev/null | cut -d. -f 1 |awk -F "T" '{print $2 " " $1}')
