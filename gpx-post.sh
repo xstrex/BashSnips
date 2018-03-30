@@ -16,3 +16,7 @@ if [[ $# == '0' ]]; then
 	usage
 	return 0
 fi
+
+TIME=$(xpath "$1" '/gpx/metadata/time/text()' 2>/dev/null)
+
+echo $TIME
