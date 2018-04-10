@@ -1,0 +1,5 @@
+if [ $? == 0 ]; then
+    echo "It Worked!!"
+else
+	echo "It Failed!!"
+fi
