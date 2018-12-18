@@ -1,0 +1,836 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"mam",
+				"mame-vid"
+			],
+			[
+				"nor",
+				"normal-vid"
+			],
+			[
+				"ss_pass",
+				"ss_pass"
+			],
+			[
+				"Off",
+				"Office"
+			],
+			[
+				"bedroom_t",
+				"bedroom_temperature_mean"
+			],
+			[
+				"office_",
+				"office_temperature_mean"
+			],
+			[
+				"Temp",
+				"Temperature"
+			],
+			[
+				"med",
+				"media_player"
+			],
+			[
+				"play",
+				"play_deadmou5_livingroom_echo"
+			],
+			[
+				"S",
+				"Snooze"
+			],
+			[
+				"dishwa",
+				"dishwasher_dirty"
+			],
+			[
+				"DISHES",
+				"DISHESDISMISS\t(configuration.yaml)"
+			],
+			[
+				"In",
+				"InfluxDB\t(secrets.yaml)"
+			],
+			[
+				"had",
+				"had-user"
+			],
+			[
+				"res",
+				"resource"
+			],
+			[
+				"livi",
+				"livingroom_lights"
+			],
+			[
+				"bed",
+				"bedroom_lights"
+			],
+			[
+				"N",
+				"N7X2"
+			],
+			[
+				"Dish",
+				"Dishwasher"
+			],
+			[
+				"bath",
+				"bathroom_leakdry"
+			],
+			[
+				"show",
+				"show_empty"
+			],
+			[
+				"media",
+				"media_player"
+			],
+			[
+				"medi",
+				"media-control"
+			],
+			[
+				"jon",
+				"jon_rav4"
+			],
+			[
+				"ple",
+				"plex_id"
+			],
+			[
+				"mon",
+				"monit_cookie"
+			],
+			[
+				"un",
+				"unmonitor"
+			],
+			[
+				"em",
+				"emulated_hue_name"
+			],
+			[
+				"emulate",
+				"emulated_hue_hidden"
+			],
+			[
+				"kit",
+				"kitchen_lights_1"
+			],
+			[
+				"li",
+				"kitchen_lights_1"
+			],
+			[
+				"work",
+				"workday_sensor"
+			],
+			[
+				"livingroom",
+				"livingroom_harmony"
+			],
+			[
+				"bedroo",
+				"bedroom_lights_normal"
+			],
+			[
+				"livingr",
+				"livingroom_atv_pause"
+			],
+			[
+				"o_",
+				"o_octopi_camera"
+			],
+			[
+				"plan",
+				"plant1_status"
+			],
+			[
+				"titl",
+				"title2"
+			],
+			[
+				"o",
+				"o_light"
+			],
+			[
+				"b",
+				"b_light"
+			],
+			[
+				"lr",
+				"lr_lights"
+			],
+			[
+				"roo",
+				"roomba_find"
+			],
+			[
+				"p",
+				"p_motion"
+			],
+			[
+				"pat",
+				"patio_door"
+			],
+			[
+				"tit",
+				"title2"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "exit-if-failed.func",
+			"settings":
+			{
+				"buffer_size": 71,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 379.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Snippet: ",
+				"Snippet: CDATA"
+			],
+			[
+				"snipp",
+				"SnippetMaker: Edit Snippet"
+			],
+			[
+				"snip",
+				"SnippetMaker: Edit Snippet"
+			],
+			[
+				"setting",
+				"Preferences: Settings"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack list",
+				"Package Control: List Packages"
+			],
+			[
+				"pack rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"theme",
+				"UI: Select Theme"
+			],
+			[
+				"ui ",
+				"UI: Select Theme"
+			],
+			[
+				"pack ins",
+				"Package Control: Install Package"
+			],
+			[
+				"ui sel",
+				"UI: Select Theme"
+			],
+			[
+				"pack re",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"ui s",
+				"UI: Select Theme"
+			],
+			[
+				"pack in",
+				"Package Control: Install Package"
+			],
+			[
+				"pack ",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack con up",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"packag lis",
+				"Package Control: List Packages"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git c",
+				"Git: Commit"
+			],
+			[
+				"git ad",
+				"Git: Add All"
+			],
+			[
+				"git com",
+				"Git: Commit"
+			],
+			[
+				"git a",
+				"Git: Add All"
+			],
+			[
+				"git co",
+				"Git: Commit"
+			],
+			[
+				"sni",
+				"Snippet: Bash Intro"
+			],
+			[
+				"settings",
+				"Preferences: Settings"
+			],
+			[
+				"user pre",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"sav",
+				"File: Save All"
+			],
+			[
+				"user pref",
+				"Preferences: Package Control Settings – User"
+			],
+			[
+				"pc ins",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"git add",
+				"Git: Add All"
+			],
+			[
+				"git pus",
+				"Git: Push"
+			],
+			[
+				"lint",
+				"SublimeLinter: Goto Error"
+			],
+			[
+				"syn js",
+				"Set Syntax: JSON"
+			],
+			[
+				"gitc",
+				"Git: Commit"
+			],
+			[
+				"git pu",
+				"Git: Pull"
+			],
+			[
+				"gi",
+				"Git: Commit"
+			],
+			[
+				"gti psu",
+				"Git: Push"
+			],
+			[
+				"lines",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"git sta",
+				"Git: Status"
+			],
+			[
+				"git pul",
+				"Git: Pull"
+			],
+			[
+				"git stat",
+				"Git: Status"
+			],
+			[
+				"git st",
+				"Git: Show Tags"
+			],
+			[
+				"git pull",
+				"Git: Pull"
+			],
+			[
+				"g",
+				"Git: Add All"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"show",
+				"Git: Show Tags"
+			]
+		],
+		"width": 436.0
+	},
+	"console":
+	{
+		"height": 151.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/Strex/Github/BashSnips"
+	],
+	"file_history":
+	[
+		"/Users/Strex/Library/Application Support/Sublime Text 3/Packages/User/Snippets/bash intro.sublime-snippet",
+		"/Users/Strex/Github/mqtt-exec/README.md",
+		"/Users/Strex/Github/mqtt-exec/mqtt-exec.py",
+		"/Users/Strex/Github/Raspi-tools/screen.sh",
+		"/Users/Strex/Github/Raspi-tools/.gitignore",
+		"/Users/Strex/Github/rom-tools/scraper-wrapper.sh",
+		"/Users/Strex/Github/rom-tools/README.md",
+		"/Users/Strex/Github/HAConfig/scripts.yaml",
+		"/Users/Strex/Github/HAConfig/groups.yaml",
+		"/Users/Strex/Github/HAConfig/ui-lovelace.yaml",
+		"/Users/Strex/Library/Application Support/Sublime Text 3/Packages/All Autocomplete/All Autocomplete.sublime-settings",
+		"/Users/Strex/Library/Application Support/Sublime Text 3/Packages/User/All Autocomplete.sublime-settings",
+		"/Users/Strex/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+		"/Users/Strex/Github/HAConfig/input_boolean.yaml",
+		"/Users/Strex/Github/HAConfig/media_player.yaml",
+		"/Users/Strex/Github/HAConfig/secrets.yaml",
+		"/Users/Strex/Github/HAConfig/lovelace_migrate.py",
+		"/Users/Strex/Github/HAConfig/intent_script.yaml",
+		"/Users/Strex/Github/HAConfig/automations.yaml",
+		"/Users/Strex/Github/HAConfig/configuration.yaml",
+		"/Users/Strex/Github/HAConfig/input_number.yaml",
+		"/Users/Strex/Github/HAConfig/sensors/ha-dockermon.yaml",
+		"/Users/Strex/Github/HAConfig/sensors/darksky.yaml",
+		"/Users/Strex/Github/HAConfig/input_select.yaml",
+		"/Users/Strex/Github/HAConfig/sensors/sonoff.yaml",
+		"/Users/Strex/Github/HAConfig/light.yaml",
+		"/Users/Strex/Github/HAConfig/lovelace-gen.py",
+		"/Users/Strex/Github/HAConfig/sensors/bt_dev.yaml",
+		"/Users/Strex/Github/HAConfig/sensors/ups.yaml",
+		"/Users/Strex/Github/HAConfig/sensors/time_date.yaml",
+		"/Users/Strex/Github/HAConfig/sensors/internet_status.yaml",
+		"/Users/Strex/Github/Home-Assistant/automations.yaml",
+		"/Users/Strex/Github/Home-Assistant/travis_secrets.yaml",
+		"/Users/Strex/Github/Home-Assistant/groups.yaml",
+		"/Users/Strex/Github/Home-Assistant/cloud.yaml",
+		"/Users/Strex/Github/Home-Assistant/light.yaml",
+		"/Users/Strex/Library/Mobile Documents/com~apple~CloudDocs/sonoff notes",
+		"/Users/Strex/SpiderOak Hive/xstrex/Programming/Bash/Plex-update.sh",
+		"/Volumes/Documents/Technical Documents/sonoff notes",
+		"/Volumes/hass/apple_tv.yaml",
+		"/Volumes/hass/emulated_hue.yaml",
+		"/Volumes/hass/sensors/darksky.yaml",
+		"/Volumes/hass/sensors/cert_expiry.yaml",
+		"/Volumes/hass/hass.sublime-project",
+		"/Volumes/hass/notify.yaml",
+		"/Volumes/hass/sensors/miflora.yaml",
+		"/Volumes/hass/custom_components/device_tracker/traccar.py",
+		"/Volumes/hass/device_tracker.yaml",
+		"/Volumes/hass/zones.yaml",
+		"/Volumes/hass/light.yaml",
+		"/Volumes/hass/sensors/temp_humid.yaml",
+		"/Volumes/hass/sensors/time_date.yaml",
+		"/Volumes/hass/sensors/internet_status.yaml",
+		"/Volumes/hass/sensors/bt_dev.yaml",
+		"/Volumes/hass/scripts/internetstatus.sh",
+		"/Volumes/hass/scripts/getmonth.sh",
+		"/Volumes/hass/scripts/getday.sh",
+		"/Volumes/hass/scripts/getdayofweekshort.sh",
+		"/Volumes/hass/scripts/getdayofweek.sh",
+		"/Volumes/hass/scripts/btdev.sh",
+		"/Volumes/hass/sensors.yaml",
+		"/Users/Strex/SpiderOak Hive/Job Search/Notes",
+		"/Volumes/Silicon Labs VCP Driver Install Disk/uninstaller.sh",
+		"/Users/Strex/Downloads/uap_messages",
+		"/Users/Strex/SpiderOak Hive/Job Search/Questions for employer",
+		"/Users/Strex/Documents/Projects/HomeAssistant/Automations/automations.yaml",
+		"/Users/Strex/Documents/Projects/HomeAssistant/HADashboard/Main.dash.yaml",
+		"/Users/Strex/Documents/Projects/HomeAssistant/HADashboard/Livingroom.dash.yaml",
+		"/Users/Strex/Documents/Projects/HomeAssistant/HADashboard/Kitchen.dash.yaml",
+		"/Users/Strex/Documents/Projects/HomeAssistant/HADashboard/Patio.dash.yaml",
+		"/Users/Strex/Documents/Projects/HomeAssistant/HADashboard/Office.dash.yaml",
+		"/Users/Strex/Documents/Projects/HomeAssistant/HADashboard/Bedroom.dash.yaml",
+		"/Users/Strex/Documents/Projects/HomeAssistant/HADashboard/bottom_panel.yaml",
+		"/Users/Strex/Documents/Projects/HomeAssistant/HADashboard/Security.dash.yaml"
+	],
+	"find":
+	{
+		"height": 32.0
+	},
+	"find_in_files":
+	{
+		"height": 112.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "exit-if-failed.func",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 71,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								71,
+								71
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 32.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.SublimeLinter Messages":
+	{
+		"height": 98.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 41.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "BashSnips.sublime-project",
+	"replace":
+	{
+		"height": 60.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"untitled"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Github/HAConfig/HAConfig.sublime-project"
+			],
+			[
+				"ja",
+				"~/Github/Jabba-Stack/Docker-Stack.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 152.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
