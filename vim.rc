@@ -40,7 +40,7 @@ filetype plugin on " load the plugins for specific file types
 filetype indent on " automatically indent code
 
 " syntax highlighting
-colorscheme distinguished " possible themes: distinguished vividchalk
+colorscheme hashpunk " possible themes: distinguished vividchalk hashpunk
 set background=dark " dark background for console
 syntax enable " enable syntax highlighting
 
