@@ -86,7 +86,7 @@ fi
 
 # Custom ls colors (defaults are too dark)
 if [ $COLOR == "true" ]; then
-		LS_COLORS='di=1;34:ex=1;31'
+        LS_COLORS='di=1;34:ex=1;31'
         export LS_COLORS
 fi
 
@@ -101,12 +101,26 @@ alias sl="ls"
 alias cd..="cd .."
 alias ..="cd .."
 
+# Aliases for ls (based on os)
+if [ "$OS" == "Darwin" ]; then
+    alias ls="ls -CFG"
+    alias la="ls -CFGA"
+    alias ll="ls -1hFAlG"
+    alias lll="ls -1hFAlG |less -r"
+elif [ "$OS" == "Linux" ]; then
+    alias ls="ls -CF --color=always"
+    alias la="ls -CFA --color=always"
+    alias ll="ls -1hFAl --color=always"
+    alias lll="ls -1hFAl --color=always |less -r"
+elif [ "$OS" == "Cygwin" ]; then
+    alias ls="ls -CF --color=auto"
+    alias la="ls -CFA --color=auto"
+    alias ll="ls -1hFAl --color=auto"
+    alias lll="ls -1hFAl --color=auto |less -r"
+fi
+
 # User specific aliases
 alias c="clear"
-alias ls="ls -CF"
-alias la="ls -CFA"
-alias ll="ls -1hFAl"
-alias lll="ls -1hFAl |less -r"
 alias cl="clear"
 alias df="df -Tha"
 alias du1="du -ach --max-depth=1"
@@ -119,7 +133,6 @@ alias chr="chmod 644"
 alias wget="wget -c"
 alias hist="history | grep"
 alias myip="curl http://ipecho.net/plain; echo"
-alias uptime="uptime | awk '{ print "Uptime:", $3, $4, $5 }' | sed 's/,//g'"
 alias lstz="tar -tf"
 
 # Color dependent aliases
@@ -136,13 +149,15 @@ cls () {
         elif [ "$1" == "on" ]; then
                 if [ $COLOR == "true" ]; then
                         if [ $OS == "Darwin" ]; then
-                          unalias ls && unalias ll && unalias lll
+                          unalias ls && unalias la && unalias ll && unalias lll
                           alias ls="ls -CFG"
+                          alias la="ls -CFGA"
                           alias ll="ls -1hFAlG"
                           alias lll="ls -1hFAlG |less -r"
                         else
-                        unalias ls && unalias ll && unalias lll
+                        unalias ls && unalias la && unalias ll && unalias lll
                         alias ls="ls -CF --color=auto"
+                        alias la="ls -CFA --color=auto"
                         alias ll="ls -1hFAl --color=auto"
                         alias lll="ls -1hFAl --color=auto |less -r"
                         fi
@@ -151,8 +166,9 @@ cls () {
                         return 1
                 fi
         elif [ "$1" == "off" ]; then
-                unalias ls && unalias ll && unalias lll
+                unalias ls && unalias la && unalias ll && unalias lll
                 alias ls="ls -CF"
+                alias la="ls -CFA"
                 alias ll="ls -1hFAl"
                 alias lll="ls -1hFAl"
         fi
