@@ -40,6 +40,8 @@ ver () {
 }
 
 # Vim Install function
+ver
+
 vim-install () {
 	if [ "$OS" == "Oracle Enterprise Linux" ]; then
 		if [[ -z $(sudo -n true) ]]; then
