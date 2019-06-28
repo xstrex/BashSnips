@@ -5,40 +5,103 @@
 # Created by Strex @ 3/26/18
 #
 
-# Check our env
-if [ "$(uname)" == "Darwin" ]; then
-        OS="Darwin"
-elif [ "$(uname)" == "Linux" ]; then
-        OS="Linux"
-elif [ "$(uname)" == "MINGW64_NT" ] || [ "$(uname)" == "MINGW64_NT" ]; then
-        OS="Cygwin"
-fi
+# Check out our env
+
+ver () {
+    if [ -e "/etc/oracle-release" ]; then
+        OS="Oracle Enterprise Linux"
+        VERV=$(cut -d ' ' -f5 < /etc/oracle-release)
+    elif [ -e "/etc/redhat-release" ]; then
+        OS="RedHat Enterprise Linux"
+        VERV=$(cut -d ' ' -f7 < /etc/redhat-release)
+    elif [ -e "/etc/SuSE-release" ]; then
+        OS="SUSE Linux Enterprise Server"
+        VERV=$(grep VERSION_ID /etc/os-release |cut -d '"' -f2)
+    elif [ -e "/etc/debian_version" ]; then
+    	OS="Debian"
+    	VERV=$(cat /etc/debian_version);
+    elif [ "$(uname)" == "Darwin" ]; then
+    	OS="Darwin"
+    	VERV="Unknown"
+    elif [ "$(uname)" == "MINGW64_NT" ] || [ "$(uname)" == "MINGW64_NT" ]; then
+    	OS="Cygwin"
+    	VERV="Unknown"
+    # else
+    # echo "Not OEL, RHEL or SuSE"
+    fi
+
+    # if [ -e "/bin/uname" ]; then
+    #     VERR=$(uname -r |sed 's/.x86.*//g')
+    # elif [ -e "/proc/version" ]; then
+    #     VERR=$(cut -d ' ' -f3 < /proc/version)
+    # fi
+
+    printf "%s$OS\n$VERV ($VERV)\n"
+}
 
 # Vim Install function
 vim-install () {
-	if [ -n "$(sudo)" ]; then
+	if [ "$OS" == "Oracle Enterprise Linux" ]; then
 		if [[ -z $(sudo -n true) ]]; then
 			printf "Looks like we have sudo access..\\n"
 			printf "Installing vim..\\n"
-			if [ $OS == "Darwin" ]; then
-				eval brew install vim
-			elif [ $OS == "Linux" ]; then
-				eval apt-get -y install vim
-			elif [ $OS == "Cygwin" ]; then
-				printf "Please re-run the Cygwin installer, and install vim.\\n"
-				exit 0
+			yum install -y vim
+		elif [[ -n $(sudo -n true) ]]; then
+			printf "Sudo needs a password..\\n"
+			printf "Attempting to install vim..\\n"
+			sudo yum install -y vim
+		fi
+	elif [ "$OS" == "RedHat Enterprise Linux" ]; then
+		if [[ -z $(sudo -n true) ]]; then
+			printf "Looks like we have sudo access..\\n"
+			printf "Installing vim..\\n"
+			yum install -y vim
+		elif [[ -n $(sudo -n true) ]]; then
+			printf "Sudo needs a password..\\n"
+			printf "Attempting to install vim..\\n"
+			sudo yum install -y vim
+		fi
+	elif [ "$OS" == "SUSE Linux Enterprise Server" ]; then
+		if [[ -z $(sudo -n true) ]]; then
+			printf "Looks like we have sudo access..\\n"
+			printf "Installing vim..\\n"
+			zypper install -y vim
+		elif [[ -n $(sudo -n true) ]]; then
+			printf "Sudo needs a password..\\n"
+			printf "Attempting to install vim..\\n"
+			sudo zypper install -y vim
+		fi
+	elif [ "$OS" == "Debian" ]; then
+		if [[ -z $(sudo -n true) ]]; then
+			printf "Looks like we have sudo access..\\n"
+			printf "Installing vim..\\n"
+			apt-get install -y vim
+		elif [[ -n $(sudo -n true) ]]; then
+			printf "Sudo needs a password..\\n"
+			printf "Attempting to install vim..\\n"
+			sudo apt-get install -y vim
+		fi
+	elif [ "$OS" == "Darwin" ]; then
+		if [[ -n $( command -v brew ) ]]; then
+			if [[ -z $(sudo -n true) ]]; then
+				printf "Looks like we have sudo access..\\n"
+				printf "Installing vim..\\n"
+				brew install vim
+			elif [[ -n $(sudo -n true) ]]; then
+				printf "Sudo needs a password..\\n"
+				printf "Attempting to install vim..\\n"
+				sudo brew install vim
 			fi
 		else
-			printf "Sudo needs a password\\n"
-			printf "Please install vim then re-run \$0\\n"
+			printf "Looks like brew is not installed, please see: https://brew.sh/"
 			exit 0
 		fi
-	else
-		printf "Sudo is not installed\\n"
-		printf "Please intall vim manually, then re-run \$0\\n"
+	elif [ $OS == "Cygwin" ]; then
+		printf "Please re-run the Cygwin installer, and install vim.\\n"
 		exit 0
 	fi
 }
+
 
 if [ -n "$(command -v vim)" ]; then
 	printf "Great, Vim's installed, proceeding\\n"
@@ -67,6 +130,10 @@ curl -LSso ~/.vim/colors/distinguished.vim https://raw.githubusercontent.com/xst
 # Installing Vividchalk Theme
 printf "Installing Vividchalk theme\\n"
 curl -LSso ~/.vim/colors/vividchalk.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Colors/vividchalk.vim
+
+# Installing Hashpunk Theme
+printf "Installing Hashpunk theme\\n"
+curl -LSso ~/.vim/colors/hashpunk.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Colors/hashpunk.vim
 
 # Installing monit syntax highlighting
 printf "Installing Monit syntax highlighting\\n"
