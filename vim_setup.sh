@@ -40,56 +40,16 @@ ver () {
 # Vim Install function
 vim-install () {
 	if [ "$OS" == "Oracle Enterprise Linux" ]; then
-		if [[ -n $(sudo -n true) ]]; then
-			printf "Looks like we have sudo access..\\n"
-			printf "Installing vim..\\n"
-			yum install -y vim
-		elif [[ -z $(sudo -n true) ]]; then
-			printf "Sudo needs a password..\\n"
-			printf "Attempting to install vim..\\n"
-			sudo yum install -y vim
-		fi
+		sudo yum install -y vim
 	elif [ "$OS" == "RedHat Enterprise Linux" ]; then
-		if [[ -n $(sudo -n true) ]]; then
-			printf "Looks like we have sudo access..\\n"
-			printf "Installing vim..\\n"
-			yum install -y vim
-		elif [[ -z $(sudo -n true) ]]; then
-			printf "Sudo needs a password..\\n"
-			printf "Attempting to install vim..\\n"
-			sudo yum install -y vim
-		fi
+		sudo yum install -y vim
 	elif [ "$OS" == "SUSE Linux Enterprise Server" ]; then
-		if [[ -n $(sudo -n true) ]]; then
-			printf "Looks like we have sudo access..\\n"
-			printf "Installing vim..\\n"
-			zypper install -y vim
-		elif [[ -z $(sudo -n true) ]]; then
-			printf "Sudo needs a password..\\n"
-			printf "Attempting to install vim..\\n"
-			sudo zypper install -y vim
-		fi
+		sudo zypper install -y vim
 	elif [ "$OS" == "Debian" ]; then
-		if ! sudo -n true; then
-			printf "Sudo needs a password..\\n"
-			printf "Attempting to install vim..\\n"
-			sudo apt-get install -y vim
-		else
-			printf "Looks like we have sudo access..\\n"
-			printf "Installing vim..\\n"
-			sudo apt-get install -y vim
-		fi
+		sudo apt-get install -y vim
 	elif [ "$OS" == "Darwin" ]; then
 		if [[ -z $( command -v brew ) ]]; then
-			if [[ -z $(sudo -n true) ]]; then
-				printf "Looks like we have sudo access..\\n"
-				printf "Installing vim..\\n"
-				brew install vim
-			elif [[ -n $(sudo -n true) ]]; then
-				printf "Sudo needs a password..\\n"
-				printf "Attempting to install vim..\\n"
-				sudo brew install vim
-			fi
+			sudo brew install vim
 		else
 			printf "Looks like brew is not installed, please see: https://brew.sh/"
 			exit 0
@@ -100,6 +60,16 @@ vim-install () {
 	fi
 }
 
+if [[ $EUID -eq 0 ]]; then
+	read -p "Are you sure you want to run this as root (y|n)? " ANS
+	case $ANS in
+		y|Y) echo "Continuing.."
+		;;
+		n|N) echo "Exiting.."
+		exit 1
+		;;
+	esac
+fi
 
 if [ -n "$(command -v vim)" ]; then
 	printf "Great, Vim's installed, proceeding\\n"
