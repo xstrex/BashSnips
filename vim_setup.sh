@@ -34,7 +34,7 @@ ver () {
     #     VERR=$(cut -d ' ' -f3 < /proc/version)
     # fi
 
-    printf "%s$OS\n$VERV ($VERV)\n"
+    printf "%s$OS $VERV"
 }
 
 # Vim Install function
