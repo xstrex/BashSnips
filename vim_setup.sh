@@ -5,14 +5,6 @@
 # Created by Strex @ 3/26/18
 #
 
-if [ -n "$(vim)" ]; then
-	printf "Great, Vim's installed, proceeding\\n"
-elif [ -z "$(vim)" ]; then
-	printf "Looks like Vim's not installed\\n"
-	printf "Trying to install Vim\\n"
-	vim-install
-fi
-
 # Check our env
 if [ "$(uname)" == "Darwin" ]; then
         OS="Darwin"
@@ -47,6 +39,14 @@ vim-install () {
 		exit 0
 	fi
 }
+
+if [ -n "$(command -v vim)" ]; then
+	printf "Great, Vim's installed, proceeding\\n"
+elif [ -z "$(command -v vim)" ]; then
+	printf "Looks like Vim's not installed\\n"
+	printf "Trying to install Vim\\n"
+	vim-install
+fi
 
 # Make vim directories
 printf "Setting up directories\\n"
