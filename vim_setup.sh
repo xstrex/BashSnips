@@ -111,42 +111,42 @@ elif [ -z "$(command -v vim)" ]; then
 	vim-install
 fi
 
-if [[ -z "$( command -v vim)" ]]; then
+if 	[[ -n "$( command -v vim)" ]]; then
+		# Make vim directories
+		printf "Setting up directories\\n"
+		mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/syntax ~/.vim/colors ~/.vim/ftdetect
+
+		# Installing custom vimrc file
+		printf "Setting up custom vimrc file\\n"
+		curl -LSso ~/.vim/vimrc https://raw.githubusercontent.com/xstrex/BashSnips/master/vim.rc
+
+		# Setting up pathogen
+		printf "Setting up pathogen.vim\\n"
+		curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+
+		# Installing Solarized Theme
+		printf "Installing distinguished theme\\n"
+		curl -LSso ~/.vim/colors/distinguished.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Colors/distinguished.vim
+
+		# Installing Vividchalk Theme
+		printf "Installing Vividchalk theme\\n"
+		curl -LSso ~/.vim/colors/vividchalk.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Colors/vividchalk.vim
+
+		# Installing Hashpunk Theme
+		printf "Installing Hashpunk theme\\n"
+		curl -LSso ~/.vim/colors/hashpunk.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Colors/hashpunk.vim
+
+		# Installing monit syntax highlighting
+		printf "Installing Monit syntax highlighting\\n"
+		curl -LSso ~/.vim/syntax/monitrc.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Syntax/monitrc.vim
+		curl -LSso ~/.vim/ftdetect/monitrc.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Syntax/monitrc.ft
+
+		# Done
+		printf "Vim is installed and configured\\n"
+		printf "Rad!\\n"
+
+		exit 0
+elif [[ -z "$( command -v vim)" ]]; then
 	printf "Looks like something went wrong with the install, please install vim manually..\\n"
-	exit 0
+	exit 1
 fi
-
-# Make vim directories
-printf "Setting up directories\\n"
-mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/syntax ~/.vim/colors ~/.vim/ftdetect
-
-# Installing custom vimrc file
-printf "Setting up custom vimrc file\\n"
-curl -LSso ~/.vim/vimrc https://raw.githubusercontent.com/xstrex/BashSnips/master/vim.rc
-
-# Setting up pathogen
-printf "Setting up pathogen.vim\\n"
-curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
-# Installing Solarized Theme
-printf "Installing distinguished theme\\n"
-curl -LSso ~/.vim/colors/distinguished.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Colors/distinguished.vim
-
-# Installing Vividchalk Theme
-printf "Installing Vividchalk theme\\n"
-curl -LSso ~/.vim/colors/vividchalk.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Colors/vividchalk.vim
-
-# Installing Hashpunk Theme
-printf "Installing Hashpunk theme\\n"
-curl -LSso ~/.vim/colors/hashpunk.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Colors/hashpunk.vim
-
-# Installing monit syntax highlighting
-printf "Installing Monit syntax highlighting\\n"
-curl -LSso ~/.vim/syntax/monitrc.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Syntax/monitrc.vim
-curl -LSso ~/.vim/ftdetect/monitrc.vim https://raw.githubusercontent.com/xstrex/BashSnips/master/Vim-Syntax/monitrc.ft
-
-# Done
-printf "Vim is installed and configured\\n"
-printf "Rad!\\n"
-
-exit 0
