@@ -74,7 +74,7 @@ vim-install () {
 			printf "Sudo needs a password..\\n"
 			printf "Attempting to install vim..\\n"
 			sudo apt-get install -y vim
-		else sudo -n true;
+		elif sudo -n true; then
 			printf "Looks like we have sudo access..\\n"
 			printf "Installing vim..\\n"
 			apt-get install -y vim
