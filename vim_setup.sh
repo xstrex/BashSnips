@@ -74,10 +74,10 @@ vim-install () {
 			printf "Sudo needs a password..\\n"
 			printf "Attempting to install vim..\\n"
 			sudo apt-get install -y vim
-		elif sudo -n true; then
+		else
 			printf "Looks like we have sudo access..\\n"
 			printf "Installing vim..\\n"
-			apt-get install -y vim
+			sudo apt-get install -y vim
 		fi
 	elif [ "$OS" == "Darwin" ]; then
 		if [[ -z $( command -v brew ) ]]; then
