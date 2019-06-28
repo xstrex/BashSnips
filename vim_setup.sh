@@ -111,6 +111,11 @@ elif [ -z "$(command -v vim)" ]; then
 	vim-install
 fi
 
+if [[ -z "$( command -v vim)" ]]; then
+	printf "Looks like something went wrong with the install, please install vim manually..\\n"
+	exit 0
+fi
+
 # Make vim directories
 printf "Setting up directories\\n"
 mkdir -p ~/.vim/autoload ~/.vim/bundle ~/.vim/syntax ~/.vim/colors ~/.vim/ftdetect
