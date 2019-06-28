@@ -40,47 +40,47 @@ ver () {
 # Vim Install function
 vim-install () {
 	if [ "$OS" == "Oracle Enterprise Linux" ]; then
-		if [[ -z $(sudo -n true) ]]; then
+		if [[ -n $(sudo -n true) ]]; then
 			printf "Looks like we have sudo access..\\n"
 			printf "Installing vim..\\n"
 			yum install -y vim
-		elif [[ -n $(sudo -n true) ]]; then
+		elif [[ -z $(sudo -n true) ]]; then
 			printf "Sudo needs a password..\\n"
 			printf "Attempting to install vim..\\n"
 			sudo yum install -y vim
 		fi
 	elif [ "$OS" == "RedHat Enterprise Linux" ]; then
-		if [[ -z $(sudo -n true) ]]; then
+		if [[ -n $(sudo -n true) ]]; then
 			printf "Looks like we have sudo access..\\n"
 			printf "Installing vim..\\n"
 			yum install -y vim
-		elif [[ -n $(sudo -n true) ]]; then
+		elif [[ -z $(sudo -n true) ]]; then
 			printf "Sudo needs a password..\\n"
 			printf "Attempting to install vim..\\n"
 			sudo yum install -y vim
 		fi
 	elif [ "$OS" == "SUSE Linux Enterprise Server" ]; then
-		if [[ -z $(sudo -n true) ]]; then
+		if [[ -n $(sudo -n true) ]]; then
 			printf "Looks like we have sudo access..\\n"
 			printf "Installing vim..\\n"
 			zypper install -y vim
-		elif [[ -n $(sudo -n true) ]]; then
+		elif [[ -z $(sudo -n true) ]]; then
 			printf "Sudo needs a password..\\n"
 			printf "Attempting to install vim..\\n"
 			sudo zypper install -y vim
 		fi
 	elif [ "$OS" == "Debian" ]; then
-		if [[ -z $(sudo -n true) ]]; then
+		if [[ -n $(sudo -n true) ]]; then
 			printf "Looks like we have sudo access..\\n"
 			printf "Installing vim..\\n"
 			apt-get install -y vim
-		elif [[ -n $(sudo -n true) ]]; then
+		elif [[ -z $(sudo -n true) ]]; then
 			printf "Sudo needs a password..\\n"
 			printf "Attempting to install vim..\\n"
 			sudo apt-get install -y vim
 		fi
 	elif [ "$OS" == "Darwin" ]; then
-		if [[ -n $( command -v brew ) ]]; then
+		if [[ -z $( command -v brew ) ]]; then
 			if [[ -z $(sudo -n true) ]]; then
 				printf "Looks like we have sudo access..\\n"
 				printf "Installing vim..\\n"
