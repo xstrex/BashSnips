@@ -96,7 +96,7 @@ vim-install () {
 			printf "Looks like brew is not installed, please see: https://brew.sh/"
 			exit 0
 		fi
-	elif [ "$OS" == "Cygwin" ]; then
+	elif [[ $OS == "Cygwin" ]]; then
 		printf "Please re-run the Cygwin installer, and install vim.\\n"
 		exit 0
 	fi
