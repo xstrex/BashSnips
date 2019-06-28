@@ -70,11 +70,11 @@ vim-install () {
 			sudo zypper install -y vim
 		fi
 	elif [ "$OS" == "Debian" ]; then
-		if [[ -z $(sudo -n true) ]]; then
+		if [[ -z "$(sudo -n true)" ]]; then
 			printf "Looks like we have sudo access..\\n"
 			printf "Installing vim..\\n"
 			apt-get install -y vim
-		elif [[ -n $(sudo -n true) ]]; then
+		elif [[ -n "$(sudo -n true)" ]]; then
 			printf "Sudo needs a password..\\n"
 			printf "Attempting to install vim..\\n"
 			sudo apt-get install -y vim
