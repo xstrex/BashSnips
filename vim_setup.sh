@@ -26,8 +26,6 @@ ver () {
     elif [ "$(uname)" == "MINGW64_NT" ] || [ "$(uname)" == "MINGW64_NT" ]; then
     	OS="Cygwin"
     	VERV="Unknown"
-    # else
-    # echo "Not OEL, RHEL or SuSE"
     fi
 
     # if [ -e "/bin/uname" ]; then
@@ -40,8 +38,6 @@ ver () {
 }
 
 # Vim Install function
-ver
-
 vim-install () {
 	if [ "$OS" == "Oracle Enterprise Linux" ]; then
 		if [[ -z $(sudo -n true) ]]; then
@@ -110,6 +106,7 @@ if [ -n "$(command -v vim)" ]; then
 elif [ -z "$(command -v vim)" ]; then
 	printf "Looks like Vim's not installed\\n"
 	printf "Trying to install Vim\\n"
+	ver
 	vim-install
 fi
 
